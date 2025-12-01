@@ -150,8 +150,3 @@
 └─ script.js        &lt;!-- logic --&gt;
   </code></pre>
 </section>
-
-<section>
-  <h2>License</h2>
-  <p>MIT License (or choose your preferred license)</p>
-</section>
