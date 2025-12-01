@@ -1,4 +1,4 @@
-/* Universal Design */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
     overflow: hidden;
 }
 
-/* main container Design  */
+
 .container {
     display: grid;
     place-items: center;
@@ -14,7 +14,7 @@
     height: 100vh;
 }
 
-/* calculator body Design  */
+
 .calculator-body {
     width: 400px;
     padding: 20px;
@@ -27,7 +27,7 @@
     grid-gap: 8px;
 }
 
-/* input box screen Design  */
+
 .calculator-screen {
     height: 100px;
     width: 100%;
@@ -37,21 +37,21 @@
     padding-right: 6px;
 }
 
-/* history p tag Design  */
+
 #para {
     background-color: white;
     padding: 5px;
 }
 
-/* Calculator's  row Design  */
+
 .calc-button-row {
     display: grid;
-    /* Define columns */
+    
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 10px;
 }
 
-/* Calculator's  button Design  */
+
 .button {
     width: 65px;
     height: 65px;
@@ -64,7 +64,7 @@
     cursor: pointer;
 }
 
-/* button hover Design  */
+
 .button.c:hover {
     background-color: #c2b0f5;
 }
@@ -84,7 +84,7 @@
 }
 
 
-/* Add Media Query */
+
 @media screen and (max-width: 662px) and (min-width: 344px) {
     .calculator-body {
         width: 300px;

@@ -2,8 +2,8 @@ const numberButtons = document.querySelectorAll(".button");
 const inputBox = document.querySelector(".calculator-screen");
 const para = document.getElementById("para");
 
-let calculation = ""; // Variable to store the calculation process
-let negativeFlag = false; // Flag to keep track of the negative symbol
+let calculation = "";
+let negativeFlag = false; 
 
 function evaluateExpression(expression) {
   try {
@@ -18,34 +18,34 @@ function evaluateExpression(expression) {
   }
 }
 
-// Function to handle sign change
+
 function handleSignChange() {
   if (inputBox.value === "") {
-    inputBox.value = "-"; // Add "-" symbol if input box is empty
+    inputBox.value = "-"; 
     calculation += "-";
   } else if (inputBox.value === "-") {
-    inputBox.value = ""; // Remove "-" symbol if it's already present
+    inputBox.value = ""; 
     calculation = calculation.slice(0, -1);
   } else {
     const currentValue = parseFloat(inputBox.value);
     const newValue = -currentValue;
-    inputBox.value = newValue; // Toggle the sign change for the current value
+    inputBox.value = newValue; 
     calculation = calculation.slice(0, -currentValue.toString().length) + newValue;
   }
   para.innerText = calculation;
 }
 
-// Function to handle button clicks
+
 function handler() {
   const buttonText = this.innerText;
   if (buttonText === "AC") {
-    // Clear the calculator screen, calculation process, and paragraph content
+    
     inputBox.value = "";
     calculation = "";
     para.innerText = "";
   } else if (buttonText === "C") {
-    inputBox.value = inputBox.value.slice(0, -1); // Remove the last character from the input box
-    calculation = calculation.slice(0, -1); // Remove the last character from the calculation process
+    inputBox.value = inputBox.value.slice(0, -1); 
+    calculation = calculation.slice(0, -1); 
     para.innerText = calculation;
   } else if (buttonText === "=") {
     const result = evaluateExpression(calculation);
@@ -76,9 +76,9 @@ function handler() {
     calculation += buttonText;
     para.innerText = calculation;
   } else if (buttonText === "+/-") {
-    handleSignChange(); // Handle sign change button click
+    handleSignChange(); 
   } else {
-    // Check if the input is a number or a valid operator (+, -, *, /)
+    
     if (!isNaN(buttonText) || ["+", "-", "*", "/"].includes(buttonText)) {
       inputBox.value += buttonText;
       calculation += buttonText;
@@ -87,12 +87,12 @@ function handler() {
   }
 }
 
-// Add click event listeners to number buttons
+
 numberButtons.forEach(function (button) {
   button.addEventListener("click", handler);
 });
 
-// Add event listener for Enter key press
+
 document.addEventListener("keydown", function (event) {
   const buttonText = event.key;
   if (buttonText === "Enter") {
